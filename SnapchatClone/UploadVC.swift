@@ -45,12 +45,12 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             
             imageReference.putData(data, metadata: nil) { metadata, error in
                 if error != nil{
-                    self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                    self.showAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                 }
                 else{
                     imageReference.downloadURL { url, error in
                         if error != nil{
-                            self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+                            self.showAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                         }
                         else{
                             let imageUrl = url?.absoluteString
